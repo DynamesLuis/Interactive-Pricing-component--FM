@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*600 800*/
+
+:root {
+    --Soft-Cyan: hsl(174, 77%, 80%);
+    /*Full Slider Bar*/
+    --Strong-Cyan: hsl(174, 86%, 45%);
+    /*Slider Backround*/
+    --Light-Grayish-Red: hsl(14, 92%, 95%);
+    /*Discount Background*/
+    --Light-Red: hsl(15, 100%, 70%);
+    /*Discount Text*/
+    --Pale-Blue: hsl(226, 100%, 87%);
+    /*(CTA Text)*/
+    --White: hsl (0, 0%, 100%);
+    /*(Pricing Component Background)*/
+    --Very-Pale-Blue: hsl(230, 100%, 99%);
+    /*(Main Background*/
+    --Light-Grayish-Blue: hsl(224, 65%, 95%);
+    /*(Empty Slider Bar)*/
+    --Light-Grayish-Blue: hsl(223, 50%, 87%);
+    /*(Toggle Background)*/
+    --Grayish-Blue: hsl(225, 20%, 60%);
+    /*(Text)*/
+    --Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+    /*(Text & CTA Background)*/
+    --font-size: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+p {
+    color: var(--Grayish-Blue);
+    font-size: var(--font-size);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--Very-Pale-Blue);
+    padding: 2em 1em;
+    background-image: url("./images/bg-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 55%;
+}
+
+header {
+    background-image: url("./images/pattern-circles.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    padding: 3em 0;
+}
+
+header h1 {
+    color: var(--Dark-Desaturated-Blue);
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+header p {
+    margin-top: 1em;
+    width: 60%;
+    margin: 1em auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    margin-top: 2em;
+    background-color: white;
+    width: 100%;
+    padding: 2em;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.pageviews {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+progress {
+}
+
+.perMonth {
+ 
+}
+
+.perMonth span {
+    color: var(--Dark-Desaturated-Blue);
+    font-weight: 800;
+    font-size: 2.2em;
+}
+
+.billing-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    width: 100%;
+    & p {
+        font-size: 12px;
+    }
+}
+
+.percentage {
+    color: var(--Light-Red);
+    background-color: var(--Light-Grayish-Red);
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+/* toggle */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/**/
+
+.footer {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer ul {
+    list-style-type: none;
+    font-weight: 600;
+    color: var(--Grayish-Blue);
+}
+
+.footer ul li {
+    margin-top: 1em;
+
+    &::before {
+        content: url("./images/icon-check.svg");
+        padding-right: 1em;
+    }
+}
+
+.footer .start-btn {
+    margin-top: 2em;
+    padding: .8em 3em;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    font-weight: 800;
+    background-color: var(--Dark-Desaturated-Blue);
+    color: var(--Light-Grayish-Blue);
+}
