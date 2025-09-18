@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Interactive pricing component</title>
   <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -27,12 +28,14 @@
       <p class="perMonth">
         <span>$16.00</span> /month
       </p>
-      <progress></progress>
+      <div class="slider-container">
+        <input type="range" min="0" max="4" value="2" class="slider" id="mySlider">
+      </div>
       <div class="billing-options">
         <p>Monthly Billing</p>
         <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
+          <input type="checkbox" id="checkbox">
+          <span class="switch-slider round"></span>
         </label>
         <p>Yearly Billing</p>
         <p class="percentage">-25%</p>

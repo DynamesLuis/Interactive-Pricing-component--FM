@@ -46,10 +46,10 @@ main {
     justify-content: center;
     text-align: center;
     background-color: var(--Very-Pale-Blue);
-    padding: 2em 1em;
+    padding: 2em 1.5em;
     background-image: url("./images/bg-pattern.svg");
     background-repeat: no-repeat;
-    background-size: 100% 55%;
+    background-size: 100% 50%;
 }
 
 header {
@@ -75,7 +75,7 @@ header p {
 section {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
     align-items: center;
     margin-top: 2em;
     background-color: white;
@@ -89,13 +89,61 @@ section {
 .pageviews {
     text-transform: uppercase;
     font-weight: 600;
+    order: 1;
 }
 
-progress {
+/**/
+
+.slider-container {
+    width: 100%;
+    order: 2;
 }
 
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right,
+            var(--Soft-Cyan) var(--value, 0%),
+            var(--Light-Grayish-Blue) var(--value, 0%));
+    outline: none;
+}
+
+/* Thumb - WebKit */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: url("./images/icon-slider.svg") no-repeat center;
+    background-size: 50%;
+    background-color: var(--Strong-Cyan);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0px 10px 33px 10px var(--Soft-Cyan);
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Thumb - Firefox */
+.slider::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+    background: url("./images/icon-slider.svg") no-repeat center;
+    background-size: 50%;
+    background-color: var(--Strong-Cyan);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 10px 33px 10px var(--Soft-Cyan);
+}
+
+/**/
 .perMonth {
- 
+    order: 3;
 }
 
 .perMonth span {
@@ -109,7 +157,9 @@ progress {
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
+    order: 4;
     width: 100%;
+
     & p {
         font-size: 12px;
     }
@@ -139,7 +189,7 @@ progress {
 }
 
 /* The slider */
-.slider {
+.switch-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -149,9 +199,12 @@ progress {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
+    &:hover {
+        background-color: var(--Soft-Cyan);
+    }
 }
 
-.slider:before {
+.switch-slider:before {
     position: absolute;
     content: "";
     height: 16px;
@@ -163,36 +216,37 @@ progress {
     transition: .4s;
 }
 
-input:checked+.slider {
-    background-color: #2196F3;
+input:checked+.switch-slider {
+    background-color: var(--Strong-Cyan);
 }
 
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+input:focus+.switch-slider {
+    box-shadow: 0 0 1px var(--Strong-Cyan);
 }
 
-input:checked+.slider:before {
+input:checked+.switch-slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
 }
 
 /* Rounded sliders */
-.slider.round {
+.switch-slider.round {
     border-radius: 34px;
 }
 
-.slider.round:before {
+.switch-slider.round:before {
     border-radius: 50%;
 }
 
 /**/
 
 .footer {
-    margin-top: 3em;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    order: 5;
 }
 
 .footer ul {
