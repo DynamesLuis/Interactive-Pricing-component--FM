@@ -1,15 +1,31 @@
-const slider = document.getElementById("mySlider");
+const $slider = document.getElementById("mySlider");
+const $pageviews = document.querySelector(".pageviews");
+const $perMonth = document.querySelector(".perMonth span");
+const $toggle = document.querySelector("#checkbox");
+const pageOptions = ["10K", "50K", "100K", "500K", "1M"];
+const priceOptions = ["8", "12", "16", "24", "36"];
+let val = $slider.value;
 
-const options = ["10K", "50K", "100K", "500K", "1M"];
+
+$slider.addEventListener("input", updateSlider);
+$toggle.addEventListener('input', showPrices);
+updateSlider();
+
 
 function updateSlider() {
-    const val = slider.value;
-    //value.textContent = options[val];
-
-    // Calcular porcentaje para el gradiente
-    const percent = (val / (options.length - 1)) * 100;
-    slider.style.setProperty("--value", percent + "%");
+    val = $slider.value;
+    const percent = (val / (pageOptions.length - 1)) * 100;
+    $slider.style.setProperty("--value", percent + "%");
+    showPrices();
 }
 
-slider.addEventListener("input", updateSlider);
-updateSlider(); // inicial
+function showPrices() {
+    let pricePerMonth = parseInt(priceOptions[val]);
+
+    if ($toggle.checked) {
+        pricePerMonth = pricePerMonth - (pricePerMonth * .25);
+    }
+
+    $pageviews.textContent = `${pageOptions[val]} pageviews`;
+    $perMonth.textContent = pricePerMonth
+}
