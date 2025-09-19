@@ -27,5 +27,5 @@ function showPrices() {
     }
 
     $pageviews.textContent = `${pageOptions[val]} pageviews`;
-    $perMonth.textContent = pricePerMonth
+    $perMonth.textContent = `$${pricePerMonth}`
 }
