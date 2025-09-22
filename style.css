@@ -101,6 +101,7 @@ section {
 
 .slider {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 10px;
     border-radius: 5px;
@@ -167,12 +168,17 @@ section {
 }
 
 .yearly-billing {
+    position: relative;
+
     &::after {
         content: "-25%";
         background-color: var(--Light-Grayish-Red);
         color: var(--Light-Red);
         border-radius: 50px;
         padding: .2em;
+        position: absolute;
+        width: max-content;
+        left: 110%;
     }
 }
 
@@ -323,14 +329,18 @@ input:checked+.switch-slider:before {
 
     .billing-options {
         gap: 20px;
-        border: 1px solid red;
     }
 
-   .yearly-billing {
-    &::after {
-        content: "-25% discount";
+    .yearly-billing {
+        position: relative;
+
+        &::after {
+            content: "-25% discount";
+            position: absolute;
+            width: max-content;
+            left: 110%;
+        }
     }
-}
 
     .footer {
         width: 100%;
