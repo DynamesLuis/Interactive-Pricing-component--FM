@@ -20,7 +20,7 @@ function updateSlider() {
 }
 
 function showPrices() {
-    let pricePerMonth = parseInt(priceOptions[val]);
+    let pricePerMonth = parseInt(priceOptions[val]).toFixed(2);
 
     if ($toggle.checked) {
         pricePerMonth = pricePerMonth - (pricePerMonth * .25);
